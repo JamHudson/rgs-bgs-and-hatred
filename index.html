@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>RGsBGs</title>
+</head>
+
+<body>
+    <form hidden="true">
+        <h1><span class="color-red">Red</span> Guys, <span class="color-blue">Blue</span> Guys,</h1>
+        <h2>and their unending hatred for one another</h2>
+        <input id="map-x" type="range" min="1" max="15" step="1" value="5" oninput="updateX()">
+        <label id="label-map-x" for="map-x">Map Width</label>
+        <input id="map-y" type="range" min="1" max="5" step="1" value="3" oninput="updateY()">
+        <label id="label-map-y" for="map-y">Map Height</label>
+        <button id="start-game-button" type="button" onclick="onStart()">Start Game</button>
+        <div id="bouncy-square"></div>
+        <p class="nothing">Nothing's loading, it's just a cool animation.</p>
+    </form>
+    <main>
+        <!--Game controls-->
+        <section class="input">
+            <button onclick="recalcInterval(true); onTurn()">Next Turn</button>
+            <input id="time-slider" type="range" min="0.1" max="5" step="1" oninput="recalcInterval()">
+            <p id="game-speed">MANUAL</p>
+            <button onclick="recalcInterval(true)">Stop</button>
+            <br>
+            <button id="blue-team-auto" class="" onclick="StartAuto(0)"> AutoSpawn Blue </button>
+            <button id="red-team-auto" class="" onclick="StartAuto(1)"> AutoSpawn Red </button>
+            <br>
+        </section>
+        <!--The game "map", the area units can be in.-->
+        <section id="field" class="field">
+        </section>
+        <section id="base-info">
+            <div id="team1-info">15/15</div>
+            <div id="team2-info">15/15</div>
+        </section>
+        <!--The selection of units the player can spawn-->
+        <section id="unit-cards">
+            <div class="unit-card">
+                <input id="Normal" type="radio" name="unitType" value="Normal" checked>
+                <label for="Normal">
+                    <span>Normal</span>
+                    <img src="images/red-character.png">
+                </label>
+            </div>
+            <div class="unit-card">
+                <input id="Immolator" type="radio" name="unitType" value="Immolator">
+                <label for="Immolator">
+                    <span>Immolator</span>
+                    <img src="images/red-immolator.png">
+                </label>
+            </div>
+            <div class="unit-card">
+                <input id="Thorn" type="radio" name="unitType" value="Thorn">
+                <label for="Thorn">
+                    <span>Thorn</span>
+                    <img src="images/red-thorn.png">
+                </label>
+            </div>
+            <div class="unit-card">
+                <input id="Shield" type="radio" name="unitType" value="Shield">
+                <label for="Shield">
+                    <span>Shield</span>
+                    <img src="images/red-shield.png">
+                </label>
+            </div>
+            <div class="unit-card">
+                <input id="Regen" type="radio" name="unitType" value="Regen">
+                <label for="Regen">
+                    <span>Regen</span>
+                    <img src="images/red-regen.png">
+                </label>
+            </div>
+        </section>
+        <!--Debug section-->
+        <section hidden="true">
+            <div id="debug-tray">
+                <h2>Debug Tray</h2>
+                <div id="evil-units"></div>
+                <div id="unit-array"></div>
+            </div>
+        </section>
+    </main>
+</body>
+<div id="unit-template" class="unit" hidden="true">
+    <p class="stat health">test</p>
+    <img src="images/red-character.png">
+</div>
+<div id="empty-cell" class="blank-cell" hidden="true"></div>
+<script src="https://cdn.jsdelivr.net/npm/animejs@4.2.2/dist/bundles/anime.umd.min.js"></script>
+<script>
+    const { animate } = anime;
+</script>
+<script src="js/game.js"></script>
+
+</html>

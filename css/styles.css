@@ -1,0 +1,222 @@
+:root {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: greenyellow;
+    white-space: nowrap;
+}
+
+main {
+    min-width: 980px;
+}
+
+body {
+    background-color: darkslategray;
+}
+
+button {
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: greenyellow;
+    background: darkslateblue;
+    border-radius: 0.5rem;
+    border-width: 3px;
+    transition: 0.5s;
+}
+
+.clicked {
+    background-color: grey;
+    font-size: 110%;
+    transition: 0.5s ease-out;
+}
+
+#red-team-auto.clicked {
+    color: red;
+    transition: 0.5s;
+}
+
+#blue-team-auto.clicked {
+    color: blue;
+    transition: 0.5s;
+}
+
+h1 {
+    margin-bottom: 0;
+    text-shadow: 0.1rem 0.1rem 0 black;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 3rem;
+    font-size: 0.75rem;
+    text-shadow: 0.1rem 0.1rem 0 black;
+    font-style: italic;
+}
+
+.color-red {
+    color: red;
+}
+
+.color-blue {
+    color: blue;
+}
+
+#base-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#field,
+.unit-card,
+#debug-tray,
+#base-info div {
+    background-color: slateblue;
+    margin: auto;
+    border: 0.5rem solid black;
+    min-width: min-content;
+    border-style: ridge;
+}
+
+#base-info div {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.unit-card {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    text-align: center;
+}
+
+.unit-card input {
+    margin: auto;
+    appearance: none;
+}
+
+#start-game-button {
+    margin-top: 3rem;
+    font-size:2rem;
+    font-weight:bolder;
+    border-width:200%;
+}
+
+input[type="range"] {
+    accent-color: greenyellow;
+}
+
+.unit-card:has(> input:checked) {
+    transition: all 0.2s;
+    background-color: darkslateblue;
+    border-style: groove;
+}
+
+.unit-card img {
+    max-width: 7rem;
+    display: block;
+    margin: auto;
+}
+
+#unit-cards {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+#unit-cards>*:hover {
+    background-color: slategray;
+    color: white;
+}
+
+#field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-flow: dense;
+    min-width: min-content;
+}
+
+#field div {
+    min-width: 100px;
+}
+
+#field>*:hover {
+    border: solid 2px greenyellow;
+}
+
+.input {
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.unit {
+    max-width: 200px;
+    max-height: 8rem;
+    margin: auto;
+    height: auto;
+    text-align: center;
+}
+
+.unit p,
+label {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+label {
+    font-size: 1rem;
+}
+
+.unit img {
+    width: 80%;
+    height: auto;
+    max-height: 7rem;
+}
+
+.blank-cell {
+    border: dotted 0.25rem black;
+}
+
+#game-speed {
+    display: inline;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: greenyellow;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2rem 2rem 2rem 2rem;
+    align-items: center;
+}
+
+form input {
+    max-width: 30%;
+}
+
+form[hidden] {
+    display: none;
+}
+
+#debug-tray {
+    margin-top: 2rem;
+    color: greenyellow;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#bouncy-square {
+    position: relative;
+    margin-top: 2rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: greenyellow;
+}
+
+.nothing {
+    position: absolute;
+    bottom: 1rem;
+    opacity: 0.5;
+}
